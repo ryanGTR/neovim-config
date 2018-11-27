@@ -31,11 +31,11 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:NERDTreeShowIgnoredStatus = 1
 
 "=============deoplete==========="
-let g:deoplete#enable_at_startup = 1
-
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 "=============deoplete for clang====="
 " Change clang binary path
-call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
+"call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
 
 
 "=============theme setting==========="

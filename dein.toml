@@ -41,8 +41,8 @@ repo = 'itchyny/lightline.vim'
 #[[plugins]]
 #repo = 'tpope/vim-fugitive'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
 
 #[[plugins]]
 #repo = 'Shougo/deoplete-clangx'

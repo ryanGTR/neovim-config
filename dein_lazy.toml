@@ -27,4 +27,44 @@ repo = 'itchyny/vim-gitbranch'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
+repo = "Shougo/deoplete.nvim"
+on_i = 1
+on_event = "InsertCharPre"
+hook_source = """
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#auto_complete_delay = 0
+  let g:deoplete#auto_complete_start_length = 1
+  let g:deoplete#enable_camel_case = 0
+  let g:deoplete#enable_ignore_case = 0
+  let g:deoplete#enable_refresh_always = 0
+  let g:deoplete#enable_smart_case = 1
+  let g:deoplete#file#enable_buffer_path = 1
+  let g:deoplete#max_list = 10000
+  set completeopt-=preview
+  " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"""
+
+[[plugins]]
+repo = "zchee/deoplete-clang"
+on_ft = "cpp"
+depends = "deoplete.nvim"
+hook_add = """
+let g:deoplete#sources#clang#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang'
+"""
+
+[[plugins]]
+repo = "rhysd/vim-clang-format"
+on_ft = "cpp"
+hook_add = """
+function! CPPCodeCleanup()
+  let l:lines='all'
+  let g:clang_format_fallback_style = 'Google'
+  :pyf /usr/local/share/clang/clang-format.py
+endfunction
+command! CPPCodeCleanup call CPPCodeCleanup()
+autocmd BufWrite *.{cpp} :CPPCodeCleanup
+"""
+
+[[plugins]]
 repo = 'Shougo/deoplete-clangx'
