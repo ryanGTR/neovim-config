@@ -35,14 +35,15 @@ repo = 'Xuyuanp/nerdtree-git-plugin'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
-#[[plugins]]
-#repo = 'itchyny/vim-gitbranch'
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+hook_source = '''
+nnoremap <C-p> :<C-u>FZF<CR>
+'''
 
-#[[plugins]]
-#repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
 
-#[[plugins]]
-#repo = 'Shougo/deoplete.nvim'
-
-#[[plugins]]
-#repo = 'Shougo/deoplete-clangx'
