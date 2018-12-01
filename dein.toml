@@ -47,3 +47,12 @@ nnoremap <C-p> :<C-u>FZF<CR>
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_source = '''
+" 启动时自动focus
+set tags=./tags,./TAGS,tags;~,TAGS;~
+let g:tagbar_autofocus = 1
+nmap <F8> :TagbarToggle<CR>
+'''
