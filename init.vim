@@ -11,34 +11,12 @@ source ~/.config/nvim/dein.vim
 
 let mapleader = "\<space>"
 let maplocalleader = ";"
-
-
-"============NERETree setting========="
-let NERDTreeHijackNetrw = 0
-let NERDTreeShowHidden=1
+noremap <silent><localleader>tb :TagbarToggle<cr>
 nmap <localleader>e :NERDTreeToggle<cr>
-
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
-
-let g:NERDTreeShowIgnoredStatus = 1
-
-"=============deoplete==========="
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-"=============deoplete for clang====="
-" Change clang binary path
-"call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
+nnoremap <C-p> :<C-u>FZF<CR>
+
 
 
 "=============theme setting==========="
