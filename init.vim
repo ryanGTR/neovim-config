@@ -18,6 +18,33 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 nnoremap <C-p> :<C-u>FZF<CR>
 
 
+"==========ALE setting================"
+let g:ale_linters = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'], 
+\   'javascript': ['prettier', 'eslint'],
+\   'html': ['prettier']
+\}
+
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+let g:ale_fix_on_save = 1
+
+let g:lightline = {
+  \'active': {
+  \  'left': [
+  \    ['mode', 'paste'],
+  \    ['readonly', 'filename', 'modified', 'ale'],
+  \  ]
+  \},
+  \'component_function': {
+  \  'ale': 'ALEGetStatusLine'
+  \}
+  \ }
+
+nmap sp <Plug>(ale_previous_wrap)
+nmap sn <Plug>(ale_next_wrap)
+nmap <Leader>d :ALEDetail<CR>
 
 "=============theme setting==========="
 syntax on 

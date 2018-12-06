@@ -77,4 +77,5 @@ hook_source = '''
 set tags=./tags,./TAGS,tags;~,TAGS;~
 let g:tagbar_autofocus = 1
 '''
-
+[[plugins]]
+repo = 'w0rp/ale'
